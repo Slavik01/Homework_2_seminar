@@ -8,19 +8,23 @@ Console.Write("Введите трехзначное число: ");
 int number = Convert.ToInt32(Console.ReadLine());// в переменную число
 string numberText = Convert.ToString(number); // спомощью метода ToString перевели число в строку,сколько чисел - столько элементов строк
 
-while(number > 99 && number < 1000)
-{
-    if (numberText.Length <= 2)
+//while(number > 99 && number < 1000) // цикл если число больше 99 и меньше 1000 => тру и делаей дальше
+//{
+    if (numberText.Length > 3)
     {
-        Console.WriteLine("Вы ввели неверное число!");
+        Console.WriteLine("Вы ввели слишком большое число, введите трехзначное число!");
+    }
+    else if (numberText.Length <= 1) // число, которое переведенно в строку меньше или равно 2 
+    {
+        Console.WriteLine("Вы ввели слишком маленькое число!");
     }
     else if (numberText.Length > 2) // спомощью Length выводим сколько символов в строке и если больше 2-ух
     {
-    Console.WriteLine("Ваша последняя третья цифра: " + numberText[2]);// выводим эту цифру спомощью индекса элемента (благодаря Length)
+        Console.WriteLine("Ваша последняя третья цифра: " + numberText[2]);// выводим эту цифру спомощью индекса элемента (благодаря Length)
     }
     else 
     {
     Console.WriteLine("Последней третьей цифры нет!"); // если число (преобразованное в строку ToString) 2 или меньше то выводим
     }
-number ++;
-}
+//number ++;
+//}
